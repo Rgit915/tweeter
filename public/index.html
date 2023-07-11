@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css">
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -52,16 +53,17 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <h1>TRUMP IPSUM</h1>
-    <p>In case you don't read Twitter, the news, or just can't get enough of The Apprentice host's legendary oration,
-      try this Trump lorem ipsum generator on for size.
-
-      Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites. Lorem Ipsum
-      best not make any more threats to your website.
-      It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum?
-      An extremely credible source has called my office
-      and told me that Barack Obama's placeholder text is a fraud.
-    </p>
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form method="POST" action ="/tweets/">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text">Hello World.</textarea>
+        <div class="tweet-btn-counter">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
   </main>
 </body>
 
