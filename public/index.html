@@ -37,9 +37,11 @@
   <nav class="nav">
     <span class="logo">tweeter</span>
     <div class="nav-right">
-      <span><strong>Write</strong> a new tweet</span>
-      <br>
-      <i class="fas fa-angle-double-down"></i>
+      <span>
+        <strong>Write</strong> a new tweet
+        <br>
+        <i class="fas fa-angle-double-down"></i>
+      </span>
     </div>
 
   </nav>
@@ -57,7 +59,6 @@
   <!-- Page-specific (main) content here -->
   <main id="main-container" class="container">
     <section class="new-tweet">
-      <h2>Compose Tweet</h2>
       <form method="POST" action="/tweets/">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
@@ -79,6 +80,26 @@
         </header>
         <div class="tweet-content">
           <p>If I have seen further it is by standing on the shoulders of giants</p>
+        </div>
+        <footer>
+          <p class="timestamp">10 days ago</p>
+          <div class="icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
+      <article class="tweet">
+        <header>
+          <div class="user-info">
+            <img src="https://i.imgur.com/nlhLi3I.png" alt="Profile Image">
+            <h3 class="username">Descartes</h3>
+          </div>
+          <p class="handle">@rd</p>
+        </header>
+        <div class="tweet-content">
+          <p>Je pense , donc je suis</p>
         </div>
         <footer>
           <p class="timestamp">10 days ago</p>
