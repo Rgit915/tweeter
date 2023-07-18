@@ -78,6 +78,20 @@ $(document).ready(function() {
    const $tweetText = $form.find('#tweet-text');
    const tweetData = $form.serialize();
 
+   //validate the tweet content before sending form data to server
+   const tweetContent = $tweetText.val().trim();
+  if (!tweetContent) {
+    //if validation is not Display an error message for empty tweet content 
+    alert('Tweet content cannot be empty!');
+    return; // Stop further execution if validation fails
+  }
+
+  if (tweetContent.length > 140) {
+    // Display an error message for exceeding 140 characters
+    alert('Tweet content exceeds the 140 character limit!');
+    return; // Stop further execution if validation fails
+  }
+
     // Send the AJAX POST request
     $.ajax({
       url: '/tweets',
