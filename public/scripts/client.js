@@ -97,6 +97,10 @@ $(document).ready(function() {
 
         // Clear the textarea
         $('#tweet-text').val('');
+
+        // Reset the character counter to 140
+        $('.counter').text('140');
+       
         // Append the new tweet to the tweet container
         const tweetElement = $('<div>').text(response.text);
         $('#tweets-container').prepend(tweetElement);
