@@ -44,8 +44,8 @@ $(document).ready(function() {
       $('#tweets-container').prepend($tweetElement);
 
       // Update timestamp using timeago library
-    const $timestamp = $tweetElement.find('.timeago');
-    $timestamp.text(timeago.format(tweet.created_at));
+      const $timestamp = $tweetElement.find('.timeago');
+      $timestamp.text(timeago.format(tweet.created_at));
     });
   };
 
@@ -57,7 +57,7 @@ $(document).ready(function() {
       dataType: 'json',
       success: function(response) {
         //call the renderTweets function with the response tweets
-         renderTweets(response);
+        renderTweets(response);
       },
       error: function(error) {
         //Handle the error response
@@ -65,32 +65,32 @@ $(document).ready(function() {
       }
     });
   };
-   // call the loadTweets function to load tweets on page load
-   loadTweets();
+  // call the loadTweets function to load tweets on page load
+  loadTweets();
 
   // Event listener for form submission
   $('#tweet-form').submit(function(event) {
     // Prevent the default form submission behavior
     event.preventDefault();
 
-   // Get the form data and serialize it as a query string
-   const $form = $(this);
-   const $tweetText = $form.find('#tweet-text');
-   const tweetData = $form.serialize();
+    // Get the form data and serialize it as a query string
+    const $form = $(this);
+    const $tweetText = $form.find('#tweet-text');
+    const tweetData = $form.serialize();
 
-   //validate the tweet content before sending form data to server
-   const tweetContent = $tweetText.val().trim();
-  if (!tweetContent) {
-    //if validation is not Display an error message for empty tweet content 
-    alert('Tweet content cannot be empty!');
-    return; // Stop further execution if validation fails
-  }
+    //validate the tweet content before sending form data to server
+    const tweetContent = $tweetText.val().trim();
+    if (!tweetContent) {
+      //if validation is not Display an error message for empty tweet content 
+      alert('Tweet content cannot be empty!');
+      return; // Stop further execution if validation fails
+    }
 
-  if (tweetContent.length > 140) {
-    // Display an error message for exceeding 140 characters
-    alert('Tweet content exceeds the 140 character limit!');
-    return; // Stop further execution if validation fails
-  }
+    if (tweetContent.length > 140) {
+      // Display an error message for exceeding 140 characters
+      alert('Tweet content exceeds the 140 character limit!');
+      return; // Stop further execution if validation fails
+    }
 
     // Send the AJAX POST request
     $.ajax({
@@ -106,8 +106,8 @@ $(document).ready(function() {
 
         // Reset the character counter to 140
         $('.counter').text('140');
-       
-        // Append the new tweet to the tweet container
+
+        //Fetch and render all tweets from server including the new one
         loadTweets();
       },
       error: function(error) {
@@ -116,6 +116,4 @@ $(document).ready(function() {
       }
     });
   });
-
-  
 });
