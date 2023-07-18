@@ -7,7 +7,6 @@
 $(document).ready(function() {
   //function to render a single tweet element
   const createTweetElement = function(tweet) {
-    const createdAt = moment(tweet.created_at).fromNow();
     const $tweet = $(`
       <article class="tweet">
         <header>
@@ -21,7 +20,7 @@ $(document).ready(function() {
           <p>${tweet.content.text}</p>
         </div>
         <footer>
-          <span class="timestamp">${createdAt}</span>
+          <span class="timeago">${timeago.format(tweet.created_at)}</span>
           <div class="icons">
           <i class="fa-solid fa-flag"></i>
           <i class="fa-solid fa-retweet"></i>
@@ -43,6 +42,10 @@ $(document).ready(function() {
     tweets.forEach(function(tweet) {
       const $tweetElement = createTweetElement(tweet);
       $('#tweets-container').prepend($tweetElement);
+
+      // Update timestamp using timeago library
+    const $timestamp = $tweetElement.find('.timeago');
+    $timestamp.text(timeago.format(tweet.created_at));
     });
   };
 
