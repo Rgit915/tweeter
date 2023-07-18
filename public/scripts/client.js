@@ -111,4 +111,30 @@ $(document).ready(function() {
       }
     });
   });
+
+  // function resposible for fetching tweets from the tweets page
+  const loadTweets = function() {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'json',
+      success: function(response) {
+        //handle the success response
+        console.log('Tweets loaded successfully:', response);
+
+        //process the array of tweets
+        response.forEach(function(tweet) {
+          //Append each tweet to the tweet container
+          const tweetElement = $('<div>').text(tweet.text);
+          $('#tweets-container').prepend(tweetElement);
+        });
+      },
+      error: function(error) {
+        //Handle the error response
+        console.log('Error loading tweets:', error);
+      }
+    });
+  }
+   // call the loadTweets function to load tweets on page load
+   loadTweets();
 });
