@@ -75,5 +75,40 @@ $(document).ready(function() {
   //
   renderTweets(data);
 
+  // Event listener for form submission
+  $('#tweet-form').submit(function(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
 
+    // Get the tweet text from the textarea
+    const tweetText = $('#tweet-text').val();
+
+    // Create a new tweet object
+    const tweet = {
+      text: tweetText
+    };
+    console.log("my tweet", tweet);
+
+    // Send the AJAX POST request
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: tweet,
+      success: function(response) {
+        // Handle the success response
+        console.log('Tweet submitted successfully:', response);
+
+        // Clear the textarea
+        $('#tweet-text').val('');
+       
+        // Append the new tweet to the tweet container
+        const tweetElement = $('<div>').text(response.text);
+        $('#tweets-container').prepend(tweetElement);
+      },
+      error: function(error) {
+        // Handle the error response
+        console.log('Error submitting tweet:', error);
+      }
+    });
+  });
 });
