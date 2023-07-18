@@ -80,27 +80,23 @@ $(document).ready(function() {
     // Prevent the default form submission behavior
     event.preventDefault();
 
-    // Get the tweet text from the textarea
-    const tweetText = $('#tweet-text').val();
+   // Get the form data and serialize it as a query string
+   const formData = $(this).serializeArray();
+   const queryString = $.param(formData);
 
-    // Create a new tweet object
-    const tweet = {
-      text: tweetText
-    };
-    console.log("my tweet", tweet);
+   console.log("my serialized tweet", queryString);
 
     // Send the AJAX POST request
     $.ajax({
       url: '/tweets',
       method: 'POST',
-      data: tweet,
+      data: queryString,
       success: function(response) {
         // Handle the success response
         console.log('Tweet submitted successfully:', response);
 
         // Clear the textarea
         $('#tweet-text').val('');
-       
         // Append the new tweet to the tweet container
         const tweetElement = $('<div>').text(response.text);
         $('#tweets-container').prepend(tweetElement);
