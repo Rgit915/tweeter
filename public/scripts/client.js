@@ -17,7 +17,7 @@ $(document).ready(function() {
           <span class="handle">${tweet.user.handle}</span>
         </header>
         <div class="tweet-content">
-          <p>${tweet.content.text}</p>
+          <p>${escape(tweet.content.text)}</p>
         </div>
         <footer>
           <span class="timeago">${timeago.format(tweet.created_at)}</span>
@@ -33,6 +33,13 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  // Function to escape user-generated content
+  const escape = function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  
   //function to render tweets
   const renderTweets = function(tweets) {
     //clear the existing tweets container
