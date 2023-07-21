@@ -135,4 +135,17 @@ $(document).ready(function() {
       $('#error-container').slideDown();
     }
   });
+
+  // Event listener for "Write" button click
+  $('.write-tweet-btn').click(function() {
+    // Toggle the visibility of the new-tweet section
+    $('.new-tweet').slideToggle('slow', function() {
+      // After the animation is complete, focus on the textarea
+      if ($(this).is(':visible')) {
+        $('#tweet-text').focus();
+      } else {
+        $('.header').css('margin-bottom', '20px'); // Add space to the header when the form is visible
+      }
+    });
+  });
 });
