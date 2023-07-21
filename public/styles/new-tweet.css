@@ -6,8 +6,8 @@
   /* Center the content horizontally */
   text-align: center;
   /* Center the text content */
-
-}
+  margin-top: 10px;
+  }
 
 .new-tweet h2 {
   font-size: 20px;
