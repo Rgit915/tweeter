@@ -18,7 +18,19 @@
 }
 
 .nav-right i {
-  color: orange;
+  color: red;
   justify-content: center;
   margin-left: 3em;
+  padding: 8px;
+  animation-duration: 2s;
+
+}
+.write-tweet-btn {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+.write-tweet-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
