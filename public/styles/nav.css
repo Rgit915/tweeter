@@ -34,3 +34,23 @@
 .write-tweet-btn:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
+/*style the scroll-to-top button */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-to-top-btn i {
+  font-size: 30px;
+}
