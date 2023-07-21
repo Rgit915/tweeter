@@ -1,0 +1,42 @@
+
+/* Media query for mobile view (less than 767px)  */
+@media only screen and (max-width: 767px) {
+  .nav {
+    background-color: transparent;
+  }
+  
+}
+/* Media query for Tablet styles (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav {
+    background-color: transparent;
+    
+  }
+}
+/* Media query for desktop view (greater than 1024px) */
+@media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+    }
+  
+  .header {
+    width: 23.3%;
+    max-height: 32vh;
+    margin: 1em;
+  }
+  
+  main {
+   width: 66.7%;
+   max-width: 1024px;
+   margin-top: 6em;
+   
+  }
+
+  
+ }
+ 
