@@ -97,12 +97,14 @@ $(document).ready(function() {
     if (tweetContent.trim() === '') {
       const errorMessage = 'Please enter a tweet before submitting.';
       displayErrorMessage(errorMessage);
+      return; // prevent the empty tweet from being sent to server
     }
 
     if (tweetContent.length > 140) {
       // Display an error message for exceeding 140 characters
       const errorMessage = 'Tweet content exceeds the 140 character limit!';
       displayErrorMessage(errorMessage);
+      return;  // Prevent form submission if content exceeds the limit
     }
 
     // Send the AJAX POST request
