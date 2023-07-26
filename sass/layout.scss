@@ -1,0 +1,47 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+ @use 'flex-center';
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+ /*Sass Variables*/
+$fontSize: 24px;
+$color: #545149;
+$backgroundColor:#f4f1ec;
+$primaryFont: "Source Sans 3", sans-serif;
+$secondFont: "Bungee", sans-serif;
+
+body {
+  color: $color;
+  background-color: $backgroundColor;
+  font-size: $fontSize;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+ body {
+  font-family: $primaryFont;
+}
+
+nav .logo {
+  font-family: $secondFont; 
+}
+/*Setup the main container*/
+main {
+  width: 90%;
+  margin: 0 auto;  /*center main container horizontally within parent container */
+  background-color: inherit;
+  @include flex-center.flexCenter(column);
+  align-items: normal;
+}

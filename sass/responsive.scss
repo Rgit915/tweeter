@@ -1,0 +1,43 @@
+@use 'flex-center';
+
+/* Media query for mobile view (less than 767px)  */
+@media only screen and (max-width: 767px) {
+  .nav {
+  background-color: transparent;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  font-size: 1.5rem;
+}
+  
+}
+/* Media query for Tablet styles (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav {
+     
+  background-color: transparent;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+    
+  }
+}
+/* Media query for desktop view (greater than 1024px) */
+@media screen and (min-width: 1024px) {
+  body {
+    @include flex-center.flexCenter(row);
+    flex-wrap: wrap;
+  }
+  
+  .header {
+    width: 23.3%;
+    max-height: 320px;
+    margin: 1em;
+  }
+  
+  main {
+   width: 66.7%;
+   max-width: 1024px;
+   margin-top: 6em;
+   
+  }
+
+  
+ }
+ 
