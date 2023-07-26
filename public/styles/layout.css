@@ -3,9 +3,11 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+/*Define  mixin */
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -13,7 +15,7 @@ html {
 /*
  * Global layout stuff
  */
-
+/*Sass Variables*/
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -23,19 +25,22 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- body {
+body {
   font-family: "Source Sans 3", sans-serif;
 }
 
 nav .logo {
   font-family: "Bungee", sans-serif;
 }
+
 /*Setup the main container*/
 main {
   width: 90%;
-  margin: 0 auto;  /*center main container horizontally within parent container */
+  margin: 0 auto; /*center main container horizontally within parent container */
   background-color: inherit;
-  display:flex; 
-  flex-direction:column;
-  justify-content:center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: normal;
 }

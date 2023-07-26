@@ -44,7 +44,6 @@ article.tweet header {
 .tweet footer .icons {
   display: flex;
   gap: 10px;
-
 }
 
 .tweet:hover {

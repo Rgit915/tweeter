@@ -1,25 +1,19 @@
+/*Define  mixin */
 .new-tweet {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  /* Center the content horizontally */
-  text-align: center;
-  /* Center the text content */
-  margin-top: 10px;
-  }
-
+}
 .new-tweet h2 {
   font-size: 20px;
   margin-bottom: 5px;
 }
-
 .new-tweet form {
   margin-top: 10px;
   width: 100%;
-
 }
-
 .new-tweet label {
   display: block;
   font-weight: bold;
@@ -29,7 +23,6 @@
   padding-bottom: 6px;
   /* Add spacing between the label and the textarea */
 }
-
 .new-tweet textarea {
   width: 100%;
   height: 50px;
@@ -44,7 +37,6 @@
   /* Add a bottom border to the label */
   background-color: inherit;
 }
-
 
 .new-tweet button {
   background-color: #0e3885;
@@ -65,7 +57,6 @@
 .tweet-btn-counter {
   display: flex;
   justify-content: space-between;
-
 }
 
 .counter.over-limit {
@@ -82,7 +73,6 @@
   margin-bottom: 10px;
   border: 4px solid #ff0000;
 }
-
 #error-container i {
   margin-right: 5px;
 }

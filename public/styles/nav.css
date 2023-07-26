@@ -1,3 +1,4 @@
+/*Define  mixin */
 .nav {
   top: 0;
   left: 0;
@@ -14,28 +15,35 @@
 
 .nav-right {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
-
 .nav-right i {
   color: red;
   justify-content: center;
   margin-left: 3em;
   padding: 8px;
   animation-duration: 2s;
-
 }
+
 .write-tweet-btn {
   cursor: pointer;
   padding: 8px;
   border-radius: 20px;
   transition: background-color 0.3s ease;
 }
+
 .write-tweet-btn:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
 /*style the scroll-to-top button */
 .scroll-to-top-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -46,11 +54,7 @@
   border: none;
   border-radius: 100px;
   cursor: pointer;
-  display: none;
-  justify-content: center;
-  align-items: center;
 }
-
 .scroll-to-top-btn i {
   font-size: 30px;
 }
